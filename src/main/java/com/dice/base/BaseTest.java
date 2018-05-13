@@ -1,6 +1,7 @@
 package com.dice.base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,8 +13,8 @@ public class BaseTest {
     @BeforeMethod
     protected void methodSetUp() {
         System.out.println("Method SetUp");
-        System.setProperty("webdriver.gecko.driver","src/main/resources/geckodriver.exe");
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
 
     }
 
@@ -22,4 +23,5 @@ public class BaseTest {
         System.out.println("Method Tear Down");
         driver.quit();
     }
+
 }

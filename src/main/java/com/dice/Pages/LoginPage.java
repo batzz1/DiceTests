@@ -4,6 +4,7 @@ import com.dice.base.BasePageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePageObject<LoginPage> {
 
@@ -20,7 +21,10 @@ public class LoginPage extends BasePageObject<LoginPage> {
 
     public LoginPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver,this);
     }
+
+
     public void openLogInPage() {
         getPage(URL);
     }
